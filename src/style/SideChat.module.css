@@ -1,0 +1,41 @@
+.sideChat {
+  height: 60px;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.sideChat:hover {
+  cursor: pointer;
+  background-color: var(--background-hover-color);
+}
+
+.sideChat__avatar {
+  margin-right: 15px;
+}
+
+.sideChat__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 75%;
+}
+
+.sideChat__content__name {
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: medium;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 5px;
+}
+
+.sideChat__content__lastMessage {
+  color: var(--grey);
+  font-size: small;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,35 @@
+.header {
+  align-items: center;
+  background-color: var(--background-color);
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.header__infos {
+  display: flex;
+  align-items: center;
+}
+
+.header__text {
+  margin-left: 15px;
+  color: var(--text-color);
+}
+
+.header__infos_name {
+  font-size: large;
+}
+
+.header__infos_status {
+  font-size: small;
+  color: var(--grey);
+}
+
+.header__icons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}

@@ -1,0 +1,31 @@
+.chat {
+  background-image: var(--background-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: right;
+  background-position-y: bottom;
+  flex: 0.7;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+}
+
+.chat__history {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+  margin: 0 auto 5px auto;
+  padding: 15px 0 10px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+/* Hide scrollbar  */
+.chat__history::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}

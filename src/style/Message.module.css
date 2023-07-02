@@ -1,0 +1,74 @@
+.sent_message {
+  align-self: flex-end;
+  margin-right: 5px;
+  color: var(--text-color);
+}
+
+.sent_message__bubble {
+  position: relative;
+  display: flex;
+  flex: 0.5;
+  padding: 7px 10px;
+  background-color: var(--sent-message);
+  border-radius: 10px;
+  gap: 5px;
+}
+
+.sent_message__bubble::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 98%;
+  transform: translateX(-50%);
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent transparent var(--sent-message) transparent;
+}
+
+.sent_message__bubble_infos {
+  color: var(--sent-message-info);
+  font-size: smaller;
+  line-height: smaller;
+  margin-top: 4px;
+}
+
+.sent_message__bubble_status {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+/* ==================== RECEIVED MESSAGES ======================== */
+
+.received_message {
+  align-self: flex-start;
+  margin-left: 5px;
+  color: var(--text-color);
+}
+
+.received_message__bubble {
+  position: relative;
+  display: flex;
+  flex: 0.5;
+  padding: 7px 10px;
+  background-color: var(--received-message);
+  border-radius: 10px;
+  gap: 5px;
+}
+
+.received_message__bubble::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 2%;
+  transform: translateX(-50%);
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent transparent var(--received-message) transparent;
+}
+
+.received_message__bubble_infos {
+  color: var(--grey);
+  font-size: smaller;
+  line-height: smaller;
+  margin-top: 4px;
+}

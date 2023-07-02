@@ -1,0 +1,30 @@
+:root {
+  --background-image: url("../assets/background.jpg");
+  --background-color: #ffffff;
+  --background-hover-color: #f4f4f4;
+  --text-color: #000000;
+  --blue: #3390ec;
+  --blue-hover: #2b7ad6;
+  --neutral: #d1d1d1;
+  --grey: #797979;
+  --dark-mode-btn: url("../assets/moon-dark-64.ico");
+  --sent-message: #e9f5e9;
+  --received-message: white;
+  --sent-message-info: #4fae4e;
+}
+
+/* Dark mode */
+:root[data-theme="dark"] {
+  --background-image: url("../assets/background-dark.jpg");
+  --background-color: #1c1c1c;
+  --background-hover-color: #2c2c2c;
+  --text-color: #ffffff;
+  --blue: #3390ec;
+  --blue-hover: #2b7ad6;
+  --neutral: #656565;
+  --grey: #bdbdbd;
+  --dark-mode-btn: url("../assets/moon-light-64.ico");
+  --sent-message: #5b4ba8;
+  --received-message: #212121;
+  --sent-message-info: #ccc5f0;
+}

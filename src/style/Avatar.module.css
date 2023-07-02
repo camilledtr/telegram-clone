@@ -1,0 +1,10 @@
+.avatar {
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar__name {
+  color: white;
+}
