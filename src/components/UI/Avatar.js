@@ -11,7 +11,7 @@ const Avatar = ({ name, size, className }) => {
       style={{ background, height: useSize, width: useSize }}
     >
       <h2 className={styles.avatar__name} style={{ fontSize: 0.5 * useSize }}>
-        {name[0]}
+        {name[0].toUpperCase()}
       </h2>
     </div>
   )

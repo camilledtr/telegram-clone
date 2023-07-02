@@ -3,7 +3,7 @@ import styles from "../../style/Message.module.css"
 const sentIcon = require("../../assets/sent-icon.svg").default
 const readIcon = require("../../assets/read-icon.svg").default
 
-const Message = ({ sent, read }) => {
+const Message = ({ message, timestamp, sent, read }) => {
   const messageClass = sent ? styles.sent_message : styles.received_message
   const bubbleClass = sent
     ? styles.sent_message__bubble
@@ -17,14 +17,21 @@ const Message = ({ sent, read }) => {
 
   const iconSize = "8px"
 
+  const date = new Date(timestamp)
+  const hour = date.getHours()
+  const minute = date.getMinutes()
+  const formattedTime = `${hour.toString().padStart(2, "0")}:${minute
+    .toString()
+    .padStart(2, "0")}`
+
   return (
     <div className={messageClass}>
       <div className={bubbleClass}>
         <div className={bubbleTextClass}>
-          <p>Hi, how are you?</p>
+          <p>{message}</p>
         </div>
         <div className={bubbleInfo}>
-          <small className={styles.message__bubble_time}>10:00</small>
+          <small className={styles.message__bubble_time}>{formattedTime}</small>
           {sent && !read && (
             <img
               src={sentIcon}

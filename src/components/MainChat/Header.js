@@ -6,14 +6,14 @@ const phoneIcon = require("../../assets/phone-icon.svg").default
 const searchIcon = require("../../assets/search-icon.svg").default
 const ellipsisIcon = require("../../assets/ellipsis-icon.svg").default
 
-const Header = () => {
+const Header = ({ name, status }) => {
   return (
     <div className={styles.header}>
       <div className={styles.header__infos}>
-        <Avatar name={"Name"} size={40} />
+        <Avatar name={name} size={40} />
         <div className={styles.header__text}>
-          <h2 className={styles.header__infos_name}>Name</h2>
-          <p className={styles.header__infos_status}>online</p>
+          <h2 className={styles.header__infos_name}>{name}</h2>
+          <p className={styles.header__infos_status}>{status}</p>
         </div>
       </div>
       <div className={styles.header__icons}>

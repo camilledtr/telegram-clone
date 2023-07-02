@@ -1,42 +1,11 @@
-import React, { useEffect, useRef } from "react"
+import React from "react"
 import styles from "../../style/MainChat.module.css"
-import Header from "./Header"
-import Input from "./Input"
-import Message from "../UI/Message"
+import MainChatContent from "./MainChatContent"
 
-const MainChat = () => {
-  const chatHistoryRef = useRef(null)
-
-  useEffect(() => {
-    if (chatHistoryRef.current) {
-      chatHistoryRef.current.scrollTop = chatHistoryRef.current.scrollHeight
-    }
-  }, [])
-
+const MainChat = ({ isChatOpen, chatId }) => {
   return (
     <div className={styles.chat}>
-      <Header />
-      <div ref={chatHistoryRef} className={styles.chat__history}>
-        <Message sent={true} read={true} />
-        <Message sent={true} read={true} />
-        <Message sent={false} />
-        <Message sent={false} />
-        <Message sent={true} read={true} />
-        <Message sent={false} />
-        <Message sent={true} read={true} />
-        <Message sent={false} />
-        <Message sent={true} read={true} />
-        <Message sent={true} read={true} />
-        <Message sent={true} read={true} />
-        <Message sent={false} />
-        <Message sent={false} />
-        <Message sent={true} read={true} />
-        <Message sent={false} />
-        <Message sent={true} read={true} />
-        <Message sent={false} />
-        <Message sent={true} />
-      </div>
-      <Input />
+      {isChatOpen ? <MainChatContent chatId={chatId} /> : null}
     </div>
   )
 }

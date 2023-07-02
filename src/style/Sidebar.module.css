@@ -17,14 +17,11 @@
 }
 
 .sidebar__toggle {
-  gap: 5px;
+  overflow: hidden;
 }
 
-.sidebar__toggle_line {
-  background-color: var(--grey);
-  border-radius: 10px;
-  height: 2px;
-  width: 50%;
+.sidebar__toggle img {
+  width: 100%;
 }
 
 .sidebar__search {
@@ -64,7 +61,17 @@
   background-color: rgb(223, 223, 223);
 }
 
+.sidebar__empty {
+  color: var(--text-color);
+  font-size: large;
+  font-weight: bold;
+  margin-top: 30px;
+  text-align: center;
+}
+
 .sidebar__cta {
+  border: none;
+  outline: none;
   height: 60px;
   width: 60px;
   background-color: var(--blue);
