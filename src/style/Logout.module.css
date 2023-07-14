@@ -1,0 +1,18 @@
+.logout {
+  position: absolute;
+  left: 0;
+  top: 60px;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  width: 100px;
+}
+
+.logout:hover {
+  cursor: pointer;
+}
+
+.logoutText {
+  color: red;
+}

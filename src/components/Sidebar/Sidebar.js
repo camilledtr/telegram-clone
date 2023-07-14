@@ -2,15 +2,20 @@ import { useEffect, useState } from "react"
 import SideChat from "./SideChat"
 import styles from "../../style/Sidebar.module.css"
 import Button from "../UI/Button"
-import { auth } from "../../firebase"
 import { useSelector } from "react-redux"
 import { selectUser } from "../../features/userSlice"
 import { db } from "../../firebase"
+import Logout from "./Logout"
 const writeIcon = require("../../assets/pencil-white-64.ico")
 
 const Sidebar = ({ onOpenChat }) => {
   const user = useSelector(selectUser)
   const [chatsHistory, setChatsHistory] = useState([])
+  const [isLogoutWindowOpen, setIsLogoutWindowOpen] = useState(false)
+
+  const toggleLogoutWindow = () => {
+    setIsLogoutWindowOpen((prevState) => !prevState)
+  }
 
   useEffect(() => {
     const unsubscribe = db.collection("chats").onSnapshot((snapshot) => {
@@ -51,11 +56,12 @@ const Sidebar = ({ onOpenChat }) => {
 
   return (
     <div className={styles.sidebar}>
-      <div className={styles.sidebar__header} onClick={() => auth.signOut()}>
+      <div className={styles.sidebar__header} onClick={toggleLogoutWindow}>
         <Button className={styles.sidebar__toggle}>
           <img src={user.photo} alt="user photo" />
         </Button>
         <input className={styles.sidebar__search} placeholder="Search"></input>
+        {isLogoutWindowOpen && <Logout />}
       </div>
       <div className={styles.sidebar__sideChats}>
         {chatsHistory.length > 0 &&
